@@ -1,30 +1,11 @@
-from django.shortcuts import render
 
-# Create your views here.
+from django.shortcuts import render, redirect
+from .models import LoginCreds,RegiCreds
+
+
 def Index(request):
-    return render(request, 'index.html')
-
-def Loginview(request):
-    return render(request, 'login.html')
-
-def Registerview(request):
-    return render(request, 'register.html')
+    return render(request, "index.html")
 
 def Dashboardview(request):
-    return render(request, 'dashboard.html')
-
-def Tasksview(request):
-    return render(request, 'tasks.html')
-
-def TaskFormView(request):
-    return render(request, 'task-form.html')
-
-def TaskDetail(request):
-    return render(request, 'task-detail.html')
-
-def SettingView(request):
-    return render(request, 'settings.html')
-
-def CategoryView(request):
-    return render(request, 'categories.html')
+    return render(request, "dashboard.html")
 
