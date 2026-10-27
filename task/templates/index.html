@@ -1,25 +1,26 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TaskFlow — Manage tasks with clarity</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/components.css' %}">
+  <link rel="stylesheet" href="{% static 'css/landing.css' %}">
 </head>
 <body>
 
   <nav class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">Task<span>Flow</span></a>
+      <a href="{% url 'Home' %}" class="nav-logo">Task<span>Flow</span></a>
 
       <div class="nav-menu" id="navMenu">
         <div class="nav-links">
           <a href="#features" class="nav-link">Features</a>
           <a href="#how-it-works" class="nav-link">How It Works</a>
-          <a href="login.html" class="nav-link">Sign In</a>
-          <a href="register.html" class="btn btn-primary">Get Started</a>
+          <a href="{% url 'Login' %}" class="nav-link">Sign In</a>
+          <a href="{% url 'Register' %}" class="btn btn-primary">Get Started</a>
         </div>
       </div>
 
@@ -38,7 +39,7 @@
           <h1 class="hero-title">Manage your tasks <br>with absolute clarity.</h1>
           <p class="hero-subtitle">TaskFlow is a minimalist task manager designed to remove the noise. Organize your day, prioritize what matters, and find your focus.</p>
           <div class="hero-actions">
-            <a href="register.html" class="btn btn-primary btn-lg">Get Started</a>
+            <a href="{% url 'Register' %}" class="btn btn-primary btn-lg">Get Started</a>
             <a href="#features" class="btn btn-ghost btn-lg">Explore Features</a>
           </div>
         </div>
@@ -154,7 +155,7 @@
       <div class="cta-container">
         <h2>Ready to find your focus?</h2>
         <p class="text-muted">Join TaskFlow today and experience a calmer way to manage your productivity.</p>
-        <a href="register.html" class="btn btn-primary btn-lg">Get Started Now</a>
+        <a href="{% url 'Register' %}" class="btn btn-primary btn-lg">Get Started Now</a>
       </div>
     </section>
   </main>
@@ -162,7 +163,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo">Task<span>Flow</span></a>
+        <a href="{% url 'Home' %}" class="nav-logo">Task<span>Flow</span></a>
         <p class="text-muted text-sm">Minimalist productivity for focused minds.</p>
       </div>
       <div class="footer-links">
@@ -173,13 +174,12 @@
         </div>
         <div class="link-group">
           <h4>Account</h4>
-          <a href="login.html">Sign In</a>
-          <a href="register.html">Get Started</a>
+          <a href="{% url 'Login' %}">Sign In</a>
+          <a href="{% url 'Register' %}">Get Started</a>
         </div>
       </div>
     </div>
   </footer>
-
-  <script src="js/landing.js"></script>
+  <script src="{% static 'js/landing.js' %}"></script>
 </body>
 </html>
