@@ -132,6 +132,17 @@ input:focus, textarea:focus, select:focus {
 .font-medium { font-weight: var(--font-weight-medium); }
 .font-semibold { font-weight: var(--font-weight-semibold); }
 
+.nav-logo {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-main) !important;
+  letter-spacing: -0.02em;
+}
+
+.nav-logo span {
+  color: var(--color-primary) !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
