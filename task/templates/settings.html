@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings — TaskFlow</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body class="app-page">
+
+  <div class="app-shell">
+    <!-- Sidebar Navigation (Shared) -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <a href="index.html" class="nav-logo">Task<span>Flow</span></a>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li>
+            <a href="dashboard.html" class="nav-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="tasks.html" class="nav-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+              <span>All Tasks</span>
+            </a>
+          </li>
+          <li>
+            <a href="categories.html" class="nav-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              <span>Categories</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="user-avatar">JD</div>
+          <div class="user-info">
+            <span class="user-name">User Name</span>
+            <a href="settings.html" class="nav-item active" style="padding:0; font-size: var(--font-size-xs);">Settings</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Mobile Nav Toggle -->
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <header class="page-header">
+        <div class="header-title-area">
+          <h1>Settings</h1>
+          <p class="text-muted">Manage your account preferences and profile.</p>
+        </div>
+      </header>
+
+      <div class="settings-grid">
+        <!-- Profile Section -->
+        <section class="settings-section">
+          <div class="section-header">
+            <h2>Profile</h2>
+            <p class="text-muted text-sm">Your public identity within TaskFlow.</p>
+          </div>
+          <div class="card">
+            <form id="profileForm">
+              <div class="form-group">
+                <label for="userName" class="form-label">Full Name</label>
+                <input type="text" id="userName" name="userName" placeholder="User Name">
+              </div>
+              <div class="form-group">
+                <label for="userEmail" class="form-label">Email Address</label>
+                <input type="email" id="userEmail" name="userEmail" placeholder="user@example.com">
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- Preferences Section -->
+        <section class="settings-section">
+          <div class="section-header">
+            <h2>Preferences</h2>
+            <p class="text-muted text-sm">Customize how the app behaves.</p>
+          </div>
+          <div class="card">
+            <div class="pref-item">
+              <div class="pref-info">
+                <span class="pref-title">Reduced Motion</span>
+                <span class="pref-desc">Minimize animations for a more static experience.</span>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="reducedMotionPref">
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <div class="pref-item">
+              <div class="pref-info">
+                <span class="pref-title">Compact View</span>
+                <span class="pref-desc">Reduce spacing in the task list for higher density.</span>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="compactViewPref">
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Account Section -->
+        <section class="settings-section">
+          <div class="section-header">
+            <h2>Account</h2>
+            <p class="text-muted text-sm">Security and session management.</p>
+          </div>
+          <div class="card">
+            <div class="account-actions">
+              <button class="btn btn-ghost btn-full" id="signOutBtn">Sign Out</button>
+              <p class="text-xs text-muted text-center" style="margin-top: var(--space-sm);">
+                Backend authentication not yet connected.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

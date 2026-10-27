@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Details — TaskFlow</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/task-detail.css">
+</head>
+<body class="app-page">
+
+  <div class="app-shell">
+    <!-- Sidebar Navigation (Shared) -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <a href="index.html" class="nav-logo">Task<span>Flow</span></a>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li>
+            <a href="dashboard.html" class="nav-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="tasks.html" class="nav-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+              <span>All Tasks</span>
+            </a>
+          </li>
+          <li>
+            <a href="categories.html" class="nav-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              <span>Categories</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="user-avatar">JD</div>
+          <div class="user-info">
+            <span class="user-name">User Name</span>
+            <a href="settings.html" class="user-settings-link">Settings</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Mobile Nav Toggle -->
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <div class="detail-container">
+        <a href="tasks.html" class="back-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Back to all tasks
+        </a>
+
+        <div id="taskDetailContent" class="empty-state-card">
+          <!-- Default Empty State -->
+          <div class="empty-state-content">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="empty-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <h3>No task selected</h3>
+            <p class="text-muted">Please select a task from your list to view its details.</p>
+            <a href="tasks.html" class="btn btn-secondary">Return to Tasks</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Delete Confirmation Modal (Shared Logic) -->
+  <div class="modal-overlay" id="deleteModal">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="deleteModalTitle">
+      <div class="modal-header">
+        <h2 id="deleteModalTitle">Delete Task</h2>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this task? This action cannot be undone.</p>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn btn-ghost" id="cancelDelete">Cancel</button>
+        <button type="button" class="btn btn-danger" id="confirmDelete">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+  <script src="js/task-detail.js"></script>
+</body>
+</html>
