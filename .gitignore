@@ -1,21 +1,23 @@
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
 
-# Virtual environments
+# Python virtual environments
 .venv/
 venv/
 
-# Secrets and local configuration
-.env
+# Python cache
+__pycache__/
+*.py[cod]
 
-# Local databases and runtime files
-db.sqlite3
+# Local SQLite databases
+*.sqlite3
+*.db
+
+# Logs
 *.log
 
-# Editor and operating-system files
+# IDE files
 .cursor/
 .idea/
-.DS_Store
-Thumbs.db
